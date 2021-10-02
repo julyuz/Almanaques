@@ -344,3 +344,50 @@
                }
            }
    );
+
+
+   //***Código base para crear "AsyncTask"
+   new HiloEnSegundoPlano().execute("variable Tipo_empezarBackground", "variable Tipo_empezarBackground", "..."); //Arrancamos el AsyncTask. el método "execute" envía datos directamente a doInBackground()
+
+    private class HiloEnSegundoPlano extends AsyncTask <Tipo_empezarBackground, Tipo_duranteBackground, Tipo_terminarBackground> {
+
+        public HiloEnSegundoPlano(){
+                //TODO código del constructor
+        }
+
+        @Override
+        protected void onPreExecute() {
+                //TODO código del onPreExecute (Hilo Principal)
+        }
+
+        @Override
+        protected Tipo_terminarBackground doInBackground(Tipo_empezarBackground... varEntrarBackground) {
+                //TODO código del doInBackground (Hilo en Segundo Plano)
+
+                //...
+                publishProgress(valor_Tipo_duranteBackground); //Opcional. Para pasar el valor y llamar a onProgressUpdate()
+                //...
+
+                //...
+                cancel(true); //Opcional. Para cancelar en vez de ejecutar al terminar onPostExecute(), ejecutar onCancelled(). Comprobar si se ha cancelado con isCancelled()
+                //...
+
+                return valor_Tipo_terminarBackground;
+        }
+
+        @Override
+        protected void onProgressUpdate(Tipo_duranteBackground... varDuranteBackground) {
+                //TODO código del onProgressUpdate (Hilo Principal)
+        }
+
+        @Override
+        protected void onPostExecute(Tipo_terminarBackground varTerminarBackground) {
+                //TODO código del onPostExecute (Hilo Principal)
+        }
+
+        @Override
+        protected void onCancelled (Tipo_terminarBackground varTerminarBackground) {
+                //TODO código del onCancelled (Hilo Principal)
+        }
+
+    }
