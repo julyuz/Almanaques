@@ -391,3 +391,14 @@
         }
 
     }
+
+    // Establecer altura de "ImageView"
+    imageView.getLayoutParams().height = 20;
+
+    // Cambiar propiedades de controles
+    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
+    params.weight = 1.0f;
+    params.gravity = Gravity.TOP;
+
+    button.setLayoutParams(params);
+    
