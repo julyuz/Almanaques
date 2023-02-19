@@ -1,0 +1,10 @@
+
+- Asignar Android Studio a Flutter
+flutter config --android-studio-dir="F:\PROGRAMAS\AndroidStudio"
+
+- En caso de error "bottom overflow by pixels", colocar en el Scaffold
+  Scaffold(
+	resizeToAvoidBottomInset : false,
+	body:
+	  SingleChildScrollView()
+  )
